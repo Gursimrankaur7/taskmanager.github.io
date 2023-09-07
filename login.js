@@ -55,7 +55,7 @@ const form = document.getElementById('login-form');
 
         function sub(){
             if(email.value==="gursimran@gmail.com" && password.value==="123456"){
-                window.location.assign("index.html");
+                window.location.assign("main.html");
             }
             else{
                 alert("Oh!!! Please enter your correct details");

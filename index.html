@@ -1,73 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Manager</title>
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
-  <div class="heading">
-    <h3 class="heartbeat">TASK MANAGER</h3>
-  </div>
-  <div class="main">
-    <div>
-      <div class="todo-input">
-        <span>Schedule Task: </span>
-        <input type="text" placeholder="Enter new task">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>Add Category: </span>
-        <input type="text" placeholder="Enter new category" list="categoryList">
-        <br><br>
-        <datalist id="categoryList">
-          <option value="Personal"></option>
-          <option value="Work"></option>
-          <option value="Shopping"></option>
-        </datalist>
-        <span>Schedule Date:</span>
-        <input type="date" id="dateInput">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>Schedule Time:</span>
-        <input type="time" id="timeInput">
-        <span></span>
-        <span></span>
-        <button id="addBtn">ADD</button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button id="sortBtn">SORT BY DATE</button>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="" id="login-form">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <!-- <i class='bx bx-envelope' ></i> -->
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" autocomplete="off" required>
+                        <label for="">Email</label>
+                        <small>Error message</small>
+                    </div>
+                    <div class="inputbox">
+                        <!-- <i class='bx bx-lock-open-alt'></i> -->
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                        <div class="eye-area">
+                            <div class="eye-box" onclick="myLogPassword()">
+                                <i class="fa-regular fa-eye" id="eye"></i>
+                                <i class="fa-regular fa-eye-slash" id="eye-slash"></i>
+                            </div>
+                        </div>
+                        <small>Error message</small>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember Me  
+                            <a href="#">Forget Password</a>
+                        </label>
+                      
+                    </div>
+                    <button id="btn" type="submit" onclick="sub()">Log in</button>
+                    <div class="register">
+                        <p>Don't have a account <a href="#">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-      </div>
-
-      <div class="tablee">
-        <table id="todoTable" class="content-table">
-          <tr class="firstRow">
-            <td>
-              <span class="material-symbols-rounded"> select_check_box </span>
-            </td>
-            <td>Scheduled Date</td>
-            <td>Scheduled Time</td>
-            <td>To Do!</td>
-            <td>
-              <select id="categoryFilter"></select>
-            </td>
-            <td>
-              <span class="material-symbols-outlined"> delete_forever </span>
-            </td>
-          </tr>
-          <div class="second">
-
-          </div>
-        </table>
-      </div>
-    </div>
-  </div>
-  <script src="index.js"></script>
+    <script src="login.js"></script>
 </body>
-
 </html>
